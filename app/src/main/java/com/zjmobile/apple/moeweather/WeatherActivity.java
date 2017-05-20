@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.zjmobile.apple.moeweather.gson.Forecast;
 import com.zjmobile.apple.moeweather.gson.Weather;
+import com.zjmobile.apple.moeweather.service.AutoUpdateService;
 import com.zjmobile.apple.moeweather.util.Utility;
 import com.zjmobile.apple.moeweather.util.HttpUtil;
 
@@ -241,8 +242,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
-        //Intent intent = new Intent(this, AutoUpdateService.class);
-        //startService(intent);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
 
